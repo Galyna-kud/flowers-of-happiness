@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 30 30% 98%;
+    --foreground: 30 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 30 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 10% 15%;
+
+    --primary: 350 60% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 140 25% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 30 20% 94%;
+    --muted-foreground: 30 10% 45%;
+
+    --accent: 40 70% 55%;
+    --accent-foreground: 30 10% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 20% 88%;
+    --input: 30 20% 88%;
+    --ring: 350 60% 65%;
+
+    --radius: 0.75rem;
+
+    /* Custom flower shop tokens */
+    --rose: 350 60% 65%;
+    --rose-light: 350 70% 92%;
+    --rose-dark: 350 50% 45%;
+    --sage: 140 25% 45%;
+    --sage-light: 140 30% 90%;
+    --sage-dark: 140 30% 30%;
+    --cream: 40 40% 95%;
+    --gold: 40 70% 55%;
+    --gold-light: 40 80% 85%;
+    --blush: 10 50% 95%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(350 70% 92%) 0%, hsl(40 40% 95%) 50%, hsl(140 30% 90%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(30 30% 98%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(350 60% 65%) 0%, hsl(350 50% 55%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(40 70% 55%) 0%, hsl(35 60% 45%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(350 60% 65% / 0.15);
+    --shadow-card: 0 8px 30px -8px hsl(30 10% 15% / 0.1);
+    --shadow-glow: 0 0 40px hsl(350 60% 65% / 0.2);
+
+    /* Font families */
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'Montserrat', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 30 10% 10%;
+    --foreground: 30 20% 95%;
+
+    --card: 30 10% 12%;
+    --card-foreground: 30 20% 95%;
+
+    --popover: 30 10% 12%;
+    --popover-foreground: 30 20% 95%;
+
+    --primary: 350 55% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 140 20% 35%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 30 10% 18%;
+    --muted-foreground: 30 15% 60%;
+
+    --accent: 40 60% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 10% 20%;
+    --input: 30 10% 20%;
+    --ring: 350 55% 60%;
+
+    --rose: 350 55% 60%;
+    --rose-light: 350 40% 25%;
+    --sage: 140 20% 35%;
+    --sage-light: 140 15% 20%;
+    --cream: 40 20% 15%;
+    --gold: 40 60% 50%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(350 40% 15%) 0%, hsl(30 10% 10%) 50%, hsl(140 15% 15%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(30 10% 12%) 0%, hsl(30 10% 10%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(350 55% 60%) 0%, hsl(350 45% 50%) 100%);
+
+    --shadow-soft: 0 4px 20px -4px hsl(350 55% 60% / 0.2);
+    --shadow-card: 0 8px 30px -8px hsl(0 0% 0% / 0.3);
+    --shadow-glow: 0 0 40px hsl(350 55% 60% / 0.15);
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-rose to-gold;
+  }
+
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-md border border-border/50 shadow-card;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+}
+
+@layer utilities {
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--rose-light)) 0%,
+    hsl(var(--cream)) 50%,
+    hsl(var(--rose-light)) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
