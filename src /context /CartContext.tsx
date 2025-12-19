@@ -11,7 +11,6 @@ interface CartContextType {
   totalItems: number;
   totalPrice: number;
 }
-
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
