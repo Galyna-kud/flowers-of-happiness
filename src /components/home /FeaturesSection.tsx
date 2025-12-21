@@ -33,6 +33,7 @@ const features = [
   },
 ];
 
+
 const FeaturesSection = () => {
   return (
     <section className="py-16 md:py-24 bg-background">
